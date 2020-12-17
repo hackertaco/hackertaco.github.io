@@ -20,7 +20,7 @@
 <meta property="og:description" content="1. cs 스터디 모집2. 학습 계획3. 시간 복잡도? 공간 복잡도 ?4. 알고리즘배열 189. Rotate Array12345678910111213141516&#x2F;** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; k * @return &amp;#123;void&amp;#125; Do not ret">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T14:39:39.000Z">
-<meta property="article:modified_time" content="2020-12-15T11:51:43.161Z">
+<meta property="article:modified_time" content="2020-12-16T08:28:39.064Z">
 <meta property="article:author" content="hackertaco">
 <meta property="article:tag" content="스터디">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/13/cs%EC%8A%A4%ED%84%B0%EB%94%94-1-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84/" class="article-date">
-     <time datetime="2020-12-15T11:51:43.161Z" itemprop="dateModified">2020-12-15</time>
+     <time datetime="2020-12-16T08:28:39.064Z" itemprop="dateModified">2020-12-16</time>
   </a>
 </div>
 
@@ -213,7 +213,7 @@
 
 <h6 id="단순-연결-리스트-876-Middle-of-the-Linked-List"><a href="#단순-연결-리스트-876-Middle-of-the-Linked-List" class="headerlink" title="단순 연결 리스트 876. Middle of the Linked List"></a>단순 연결 리스트 876. Middle of the Linked List</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let middleNode &#x3D; function(head) &#123;</span><br><span class="line">    let targetLen &#x3D; Math.ceil(getLen(head)&#x2F;2);</span><br><span class="line">    return returnAtPosition(head, targetLen);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let getLen &#x3D; function(node) &#123;</span><br><span class="line">    let length &#x3D; 0;</span><br><span class="line">    while(node.next) &#123;</span><br><span class="line">        length +&#x3D; 1;</span><br><span class="line">        node &#x3D; node.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let returnAtPosition &#x3D; function(node, targetLen) &#123;</span><br><span class="line">    for(let i &#x3D; 0; i &lt; targetLen; i++) &#123;</span><br><span class="line">        node &#x3D; node.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return node;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h6 id="단순-연결-리스트-92-Reverse-Linked-List-II"><a href="#단순-연결-리스트-92-Reverse-Linked-List-II" class="headerlink" title="단순 연결 리스트 92. Reverse Linked List II"></a>단순 연결 리스트 92. Reverse Linked List II</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * function ListNode(val, next) &#123;</span><br><span class="line"> *     this.val &#x3D; (val&#x3D;&#x3D;&#x3D;undefined ? 0 : val)</span><br><span class="line"> *     this.next &#x3D; (next&#x3D;&#x3D;&#x3D;undefined ? null : next)</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;ListNode&#125; head</span><br><span class="line"> * @param &#123;number&#125; m</span><br><span class="line"> * @param &#123;number&#125; n</span><br><span class="line"> * @return &#123;ListNode&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var reverseBetween &#x3D; function(head, m, n) &#123;</span><br><span class="line">    let headNode &#x3D; head; &#x2F;&#x2F;12345</span><br><span class="line">    let tailNode &#x3D; head; &#x2F;&#x2F;12345</span><br><span class="line">    let nodeCopy &#x3D; head; &#x2F;&#x2F;12345</span><br><span class="line">    let secondNode &#x3D;head;</span><br><span class="line"></span><br><span class="line">    for(let t &#x3D; 1; t&lt;&#x3D;n; t++)&#123;</span><br><span class="line">        tailNode &#x3D; tailNode.next</span><br><span class="line">    &#125;</span><br><span class="line">    for(let i &#x3D; 1; i &lt; m;i++)&#123;</span><br><span class="line">        secondNode &#x3D; headNode.next &#x2F;&#x2F;2345</span><br><span class="line">        nodeCopy &#x3D; nodeCopy.next</span><br><span class="line">    &#125;</span><br><span class="line">    secondNode.next &#x3D; tailNode; &#x2F;&#x2F;2</span><br><span class="line"></span><br><span class="line">    for(let j&#x3D;m; j &lt; n;j++)&#123;</span><br><span class="line">          &#x2F;&#x2F; 2345</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    headNode.next &#x3D; secondNode</span><br><span class="line">    return headNode</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h6 id="단순-연결-리스트-92-Reverse-Linked-List-II"><a href="#단순-연결-리스트-92-Reverse-Linked-List-II" class="headerlink" title="단순 연결 리스트 92. Reverse Linked List II"></a>단순 연결 리스트 92. Reverse Linked List II</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * function ListNode(val, next) &#123;</span><br><span class="line"> *     this.val &#x3D; (val&#x3D;&#x3D;&#x3D;undefined ? 0 : val)</span><br><span class="line"> *     this.next &#x3D; (next&#x3D;&#x3D;&#x3D;undefined ? null : next)</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;ListNode&#125; head</span><br><span class="line"> * @param &#123;number&#125; m</span><br><span class="line"> * @param &#123;number&#125; n</span><br><span class="line"> * @return &#123;ListNode&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var reverseBetween &#x3D; function(head, m, n) &#123;</span><br><span class="line">  &#x2F;**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * function ListNode(val, next) &#123;</span><br><span class="line"> *     this.val &#x3D; (val&#x3D;&#x3D;&#x3D;undefined ? 0 : val)</span><br><span class="line"> *     this.next &#x3D; (next&#x3D;&#x3D;&#x3D;undefined ? null : next)</span><br><span class="line"> * &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;ListNode&#125; head</span><br><span class="line"> * @param &#123;number&#125; m</span><br><span class="line"> * @param &#123;number&#125; n</span><br><span class="line"> * @return &#123;ListNode&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var reverseBetween &#x3D; function(head, m, n) &#123;</span><br><span class="line">    if (head &#x3D;&#x3D;&#x3D; null) return head;</span><br><span class="line"></span><br><span class="line">    const dummy &#x3D; new ListNode(0);</span><br><span class="line">    dummy.next &#x3D; head;</span><br><span class="line"></span><br><span class="line">    let cur &#x3D; head;</span><br><span class="line">    let prev &#x3D; dummy;</span><br><span class="line">    for(let i &#x3D; 1; i&lt;m; i++)&#123;</span><br><span class="line">        cur &#x3D; cur.next; &#x2F;&#x2F;2345</span><br><span class="line">        prev &#x3D; prev.next &#x2F;&#x2F;12345</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for(let j &#x3D; m; j&lt;n; j++)&#123;</span><br><span class="line">        let temp &#x3D; cur.next;</span><br><span class="line">        cur.next &#x3D; temp.next;</span><br><span class="line">        temp.next &#x3D;prev.next;</span><br><span class="line">        prev.next &#x3D; temp</span><br><span class="line">    &#125;</span><br><span class="line">    return dummy.next</span><br><span class="line">&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -297,10 +297,10 @@
         "genre": "",
         "datePublished": "2020-12-13",
         "dateCreated": "2020-12-13",
-        "dateModified": "2020-12-15",
+        "dateModified": "2020-12-16",
         "url": "https://hackertaco.github.io/2020/12/13/cs스터디-1-시간복잡도-공간복잡도/",
         "description": "1. cs 스터디 모집2. 학습 계획3. 시간 복잡도? 공간 복잡도 ?4. 알고리즘배열 189. Rotate Array12345678910111213141516&#x2F;** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;void&#125; Do not ret",
-        "wordCount": 706
+        "wordCount": 794
     }
 </script>
 
@@ -341,6 +341,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2020/12/16/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EB%B0%B0%EC%97%B4-javascript/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            자료구조 1. 배열, 연결 리스트
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2020/12/02/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -362,6 +372,26 @@
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/16/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EB%B0%B0%EC%97%B4-javascript/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/12/16/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EB%B0%B0%EC%97%B4-javascript/" class="title">자료구조 1. 배열, 연결 리스트</a></p>
+                            <p class="item-date"><time datetime="2020-12-16T10:27:28.000Z" itemprop="datePublished">2020-12-16</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -455,7 +485,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%9C%EB%B0%9C%EB%89%B4%EB%B9%84/" rel="tag">개발뉴비</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/" rel="tag">스터디</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%9C%EB%B0%9C%EB%89%B4%EB%B9%84/" rel="tag">개발뉴비</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%84%B0%EB%94%94/" rel="tag">스터디</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
