@@ -6,23 +6,22 @@
     
 
     
-    <title>vue3를 처음으로 맞이하는 0년차개발자(1) | 0년차 개발자의 블로그</title>
+    <title>자료구조 2. doubly linked list, circular linked list | 0년차 개발자의 블로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="개발뉴비" />
+    <meta name="keywords" content="" />
     
-    <meta name="description" content="마크다운으로 처음 글도 써보고, 뷰3도 투두리스트 구현까지 해본 초보 개발(희망)자.뷰로 관리자페이지를 만드는 그 날까지..! 열싐히 기록해볼 것이다. 1. vue3 tutorial을 찾다 유튭에 아무거나 때려 공부하기  2. vue 개략한 줄 요약 : 뷰는 적응하기 쉬워! 프레임워크 안에서 놀면 된다.뷰를 말해보자면 웹 페이지를 만드는 것을 도와주는!(리">
+    <meta name="description" content="doubly linked list 일반 연결 리스트가 next 포인터를 하나만 가지고 있어서 일방향이었다면,doubly linked list는 양방향! 2개의 연결 포인트를 가지고 있다. use case ? 그런데 말입니다. doubly linked list는 실제로 어디에 쓰일까.뭐 뒤로가기 이런 거 할 때 쓰이나? 찾아보니, (출처)생각보다 다양한 부분">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue3를 처음으로 맞이하는 0년차개발자(1)">
-<meta property="og:url" content="https://hackertaco.github.io/2020/10/19/my-new-post/index.html">
+<meta property="og:title" content="자료구조 2. doubly linked list, circular linked list">
+<meta property="og:url" content="https://hackertaco.github.io/2020/12/24/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-2-doubly-linked-list-circular-linked-list/index.html">
 <meta property="og:site_name" content="0년차 개발자의 블로그">
-<meta property="og:description" content="마크다운으로 처음 글도 써보고, 뷰3도 투두리스트 구현까지 해본 초보 개발(희망)자.뷰로 관리자페이지를 만드는 그 날까지..! 열싐히 기록해볼 것이다. 1. vue3 tutorial을 찾다 유튭에 아무거나 때려 공부하기  2. vue 개략한 줄 요약 : 뷰는 적응하기 쉬워! 프레임워크 안에서 놀면 된다.뷰를 말해보자면 웹 페이지를 만드는 것을 도와주는!(리">
+<meta property="og:description" content="doubly linked list 일반 연결 리스트가 next 포인터를 하나만 가지고 있어서 일방향이었다면,doubly linked list는 양방향! 2개의 연결 포인트를 가지고 있다. use case ? 그런데 말입니다. doubly linked list는 실제로 어디에 쓰일까.뭐 뒤로가기 이런 거 할 때 쓰이나? 찾아보니, (출처)생각보다 다양한 부분">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-19T14:27:31.000Z">
-<meta property="article:modified_time" content="2020-12-17T10:05:14.481Z">
+<meta property="article:published_time" content="2020-12-24T05:05:42.000Z">
+<meta property="article:modified_time" content="2020-12-24T06:35:03.164Z">
 <meta property="article:author" content="hackertaco">
-<meta property="article:tag" content="개발뉴비">
 <meta name="twitter:card" content="summary">
     
 
@@ -153,14 +152,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-my-new-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-자료구조-2-doubly-linked-list-circular-linked-list" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        vue3를 처음으로 맞이하는 0년차개발자(1)
+        자료구조 2. doubly linked list, circular linked list
         </h1>
     
 
@@ -171,16 +170,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2020/10/19/my-new-post/" class="article-date">
-       <time datetime="2020-10-19T14:27:31.000Z" itemprop="datePublished">2020-10-19</time>
+    <a href="/2020/12/24/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-2-doubly-linked-list-circular-linked-list/" class="article-date">
+       <time datetime="2020-12-24T05:05:42.000Z" itemprop="datePublished">2020-12-24</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2020/10/19/my-new-post/" class="article-date">
-     <time datetime="2020-12-17T10:05:14.481Z" itemprop="dateModified">2020-12-17</time>
+  <a href="/2020/12/24/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-2-doubly-linked-list-circular-linked-list/" class="article-date">
+     <time datetime="2020-12-24T06:35:03.164Z" itemprop="dateModified">2020-12-24</time>
   </a>
 </div>
 
@@ -188,11 +187,6 @@
                 
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%EA%B0%9C%EB%B0%9C%EB%89%B4%EB%B9%84/" rel="tag">개발뉴비</a>
-    </div>
-
                 
 
                 
@@ -207,56 +201,47 @@
 
             
 
-            <p>마크다운으로 처음 글도 써보고, 뷰3도 투두리스트 구현까지 해본 초보 개발(희망)자.<br>뷰로 관리자페이지를 만드는 그 날까지..! 열싐히 기록해볼 것이다.</p>
-<h2 id="1-vue3-tutorial을-찾다"><a href="#1-vue3-tutorial을-찾다" class="headerlink" title="1. vue3 tutorial을 찾다"></a>1. vue3 tutorial을 찾다</h2><ul>
-<li>유튭에 아무거나 때려 공부하기</li>
+            <h1 id="doubly-linked-list"><a href="#doubly-linked-list" class="headerlink" title="doubly linked list"></a>doubly linked list</h1><hr>
+<p>일반 연결 리스트가 next 포인터를 하나만 가지고 있어서 일방향이었다면,<br>doubly linked list는 양방향! 2개의 연결 포인트를 가지고 있다.</p>
+<h3 id="use-case"><a href="#use-case" class="headerlink" title="use case ?"></a>use case ?</h3><hr>
+<p>그런데 말입니다. doubly linked list는 실제로 어디에 쓰일까.<br>뭐 뒤로가기 이런 거 할 때 쓰이나?</p>
+<p>찾아보니, <a target="_blank" rel="noopener" href="https://codeforwin.org/2015/10/doubly-linked-list-data-structure-in-c.html">(출처)</a><br>생각보다 다양한 부분에 쓰이고 있었다.</p>
+<ul>
+<li>네비게이션의 앞과 뒤를 표현할 때.</li>
+<li>뒤로가기, 앞으로 가기 (브라우저)</li>
+<li>undo redo</li>
+<li>게임 패</li>
+<li>게임의 여러 상태를 표현할 때</li>
 </ul>
-<h2 id="2-vue-개략"><a href="#2-vue-개략" class="headerlink" title="2. vue 개략"></a>2. vue 개략</h2><h3 id="한-줄-요약-뷰는-적응하기-쉬워-프레임워크-안에서-놀면-된다"><a href="#한-줄-요약-뷰는-적응하기-쉬워-프레임워크-안에서-놀면-된다" class="headerlink" title="한 줄 요약 : 뷰는 적응하기 쉬워! 프레임워크 안에서 놀면 된다."></a>한 줄 요약 : 뷰는 적응하기 쉬워! 프레임워크 안에서 놀면 된다.</h3><p>뷰를 말해보자면 웹 페이지를 만드는 것을 도와주는!<br>(리액트랑 비교해보자면, 리액트는 상대적으로 라이브러리의 성격이 강해서 js를 좀 잘해야 한다.)</p>
-<p>뷰를 실행하는 가장 쉬운 방법은 cdn 사용</p>
-<script src="https://unpkg.com/vue@next"></script>
+<p>여튼 앞에서 뒤를 기억해야 하는 일이 있는 경우, 자주 사용되는 것으로 보인다.</p>
+<h3 id="만들어보기"><a href="#만들어보기" class="headerlink" title="만들어보기"></a>만들어보기</h3><ol>
+<li>node class</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = data;</span><br><span class="line">    <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.prev = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>를 html head tag 안에 넣어주면 된다.</p>
-<p>그러면 !</p>
-<h2 id="3-잡다한-지식-조각"><a href="#3-잡다한-지식-조각" class="headerlink" title="3. 잡다한 지식 조각"></a>3. 잡다한 지식 조각</h2><ul>
-<li>뷰 3부터는 data가 함수의 모양을 하고 있어야 한다.</li>
-<li>vetur는 뷰 글자 자동완성 내지는 템플릿 자동완성 해주는 아주 조은 익스텐션</li>
-<li>vue devtool로 많은 걸 할 수 있지.</li>
-<li>v-model은 data와 화면 둘다 묶는다.</li>
+<ol start="2">
+<li>create node</li>
+</ol>
+<ul>
+<li>head, tail 선언</li>
 </ul>
-<h2 id="4-directives"><a href="#4-directives" class="headerlink" title="4. directives"></a>4. directives</h2><ul>
-<li>뷰에는 directives라는 지시어가 있다.</li>
-<li>이는 template과 script를 서로 연결해주는 어떤것으로 우선 이해했다.</li>
-<li>data, computed, methods 등을 모두 연결할 수 있다.</li>
-<li>그 중 한 예로 v-model은 input과 같이 html태그 중 어떤 것을 에력하는 태그인 경우에, vue script tag 내의 데이터와 입력 값을 서로 연결해준다.</li>
-<li>v-once는 렌더링이 딱 한번 되는 것.</li>
-</ul>
-<h2 id="5-vue-router"><a href="#5-vue-router" class="headerlink" title="5. vue router"></a>5. vue router</h2><ul>
-<li>라우터가 있어야 하는 이유는 vue가 SPA 즉, single page application 인 것과 관계가 있다.</li>
-<li>SPA는 최초 한번만 전체 페이지를 로딩한 후 데이터만 변경해서 사용하는 어플리케이션이다.</li>
-<li>이 SPA는 html, js와 같은 파일을 렌더링할 때 클라이언트 사이드 렌더링이라는 방식을 이용한다.</li>
-<li>기본적으로 페이지가 따로 없다 (single page니까!) 모든 페이지는 단순히 HTML5 History에 의해 렌더링 될 뿐이다.</li>
-<li>그래서 <b>언제 새 데이터를 불러와야 할지를 스스로 정해야 한다.</b></li>
-<li>즉 사용자의 행동에 따라 어떤 데이터가 불려올지가 정해진다.</li>
-<li>SPA라고 할지라도 한 종류의 화면만 있는 것은 아니다 !</li>
-<li>화면에 따라 다른 주소를 가진다. 주소에 따라 여러 뷰를 렌더링하는 것을 라우팅이라고 하고, vue 자체에는 이 기능이 내장돼있지 않다.</li>
-<li>대신 vue-router가 있다.</li>
-</ul>
-<h3>
-그러니까, 일단 vue-router를 add 해준다.
-</h3>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> head = <span class="keyword">new</span> Node(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> secondNode = <span class="keyword">new</span> Node(<span class="number">2</span>);</span><br><span class="line">head.next = secondNode;</span><br><span class="line">secondNode.prev = head;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> tail = secondNode;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>라우터를 통해 변할 페이지의 위치에서, <router-view></router-view>를 써줘</p>
-</li>
-<li><p>링크를 넣을 곳에 router-link 태그</p>
-</li>
-<li><p>main.js에 난 라우터를 쓸 것이라고 이야기해줘야한다. createApp(App).use(router) 이렇게?</p>
-</li>
-<li><p>default mode는 hash mode이다. SPA 환경에서 바뀐 부분만 렌더링해주어야 하기에 hash(#)를 써서 full URL을 시뮬레이트하기 때문.</p>
-</li>
-<li><p>만일 이 해쉬를 없애고 싶다면, 라우터의 히스토리모드를 사용할 수 있다.</p>
-</li>
+<li>이렇게 선언한 걸로 순회 가능!</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//head에서 순회</span></span><br><span class="line"><span class="keyword">let</span> current = head;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (current !== <span class="literal">null</span>) &#123;</span><br><span class="line">  current = current.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> current = tail;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (current !== <span class="literal">null</span>) &#123;</span><br><span class="line">  current = current.prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>list create</li>
+</ol>
+<ul>
+<li>이렇게 만든 node들로, doubly linked list class를 만들어볼 수 있다.</li>
+<li>함께 list 에 data를 추가, 삭제, 검색 등이 가능하다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> head = <span class="built_in">Symbol</span>(<span class="string">&quot;head&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> tail = <span class="built_in">Symbol</span>(<span class="string">&quot;tail&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoublyLinkedList</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 1. add data O(1), 아무 순회도 하지 않으므로 !</span></span><br><span class="line">  <span class="function"><span class="title">add</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> firstNode = <span class="keyword">new</span> Node(data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.head === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.head = firstNode;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.tail.next = firstNode;</span><br><span class="line">      firstNode.prev = <span class="built_in">this</span>.tail;</span><br><span class="line">      <span class="comment">//tail과 연결</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// tail에 재할당</span></span><br><span class="line">    <span class="built_in">this</span>.tail = firstNode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -264,7 +249,7 @@
 
 
 
-    <a data-url="https://hackertaco.github.io/2020/10/19/my-new-post/" data-id="ckgkvzips00012ab824oz4088" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://hackertaco.github.io/2020/12/24/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-2-doubly-linked-list-circular-linked-list/" data-id="ckj2h3j7j0000d0b879gvcif9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -334,20 +319,20 @@
             "@type": "Person",
             "name": "hackertaco"
         },
-        "headline": "vue3를 처음으로 맞이하는 0년차개발자(1)",
+        "headline": "자료구조 2. doubly linked list, circular linked list",
         "image": "https://hackertaco.github.io",
-        "keywords": "개발뉴비",
+        "keywords": "",
         "genre": "",
-        "datePublished": "2020-10-19",
-        "dateCreated": "2020-10-19",
-        "dateModified": "2020-12-17",
-        "url": "https://hackertaco.github.io/2020/10/19/my-new-post/",
-        "description": "마크다운으로 처음 글도 써보고, 뷰3도 투두리스트 구현까지 해본 초보 개발(희망)자.뷰로 관리자페이지를 만드는 그 날까지..! 열싐히 기록해볼 것이다.
-1. vue3 tutorial을 찾다
-유튭에 아무거나 때려 공부하기
-
-2. vue 개략한 줄 요약 : 뷰는 적응하기 쉬워! 프레임워크 안에서 놀면 된다.뷰를 말해보자면 웹 페이지를 만드는 것을 도와주는!(리",
-        "wordCount": 324
+        "datePublished": "2020-12-24",
+        "dateCreated": "2020-12-24",
+        "dateModified": "2020-12-24",
+        "url": "https://hackertaco.github.io/2020/12/24/자료구조-2-doubly-linked-list-circular-linked-list/",
+        "description": "doubly linked list
+일반 연결 리스트가 next 포인터를 하나만 가지고 있어서 일방향이었다면,doubly linked list는 양방향! 2개의 연결 포인트를 가지고 있다.
+use case ?
+그런데 말입니다. doubly linked list는 실제로 어디에 쓰일까.뭐 뒤로가기 이런 거 할 때 쓰이나?
+찾아보니, (출처)생각보다 다양한 부분",
+        "wordCount": 454
     }
 </script>
 
@@ -388,16 +373,12 @@
         
 <nav id="article-nav">
     
-        <a href="/2020/12/02/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            개발일기
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2020/12/18/%EB%A6%BF%EC%BD%94%EB%93%9C-%EC%A3%84%EB%8B%A4-%ED%92%80%EC%96%B4%EB%B3%B4%EA%B8%B0/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">릿코드 죄다 풀어보기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -585,7 +566,7 @@
     var disqus_shortname = 'hackertaco-blog';
     
     
-    var disqus_url = 'https://hackertaco.github.io/2020/10/19/my-new-post/';
+    var disqus_url = 'https://hackertaco.github.io/2020/12/24/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-2-doubly-linked-list-circular-linked-list/';
     
     (function() {
     var dsq = document.createElement('script');
