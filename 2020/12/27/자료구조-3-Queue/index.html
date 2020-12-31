@@ -12,16 +12,16 @@
     
     <meta name="keywords" content="스터디 자료구조" />
     
-    <meta name="description" content="queue?  Queue는 FIFO, 즉 선입 선출형 자료형이다.  데이터를 집어넣는 enqueue, 데이터를 추출하는 dequeue 등의 작업이 가능하다.">
+    <meta name="description" content="queue?  Queue는 FIFO, 즉 선입 선출형 자료형이다. the queues of bus stop 즉, 버스정류장에서 따온 queue는 먼저 온 사람(제일 오래 기다린 사람)이 제일 먼저 탄다는 원리를 그대로 따왔다.  데이터를 제일 뒤에 집어넣는 enqueue, 데이터를 제일 앞에서 추출하는 dequeue 등의 작업이 가능하다.삽입을 하는 enq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자료구조 3 Queue">
 <meta property="og:url" content="https://hackertaco.github.io/2020/12/27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-3-Queue/index.html">
 <meta property="og:site_name" content="0년차 개발자의 블로그">
-<meta property="og:description" content="queue?  Queue는 FIFO, 즉 선입 선출형 자료형이다.  데이터를 집어넣는 enqueue, 데이터를 추출하는 dequeue 등의 작업이 가능하다.">
+<meta property="og:description" content="queue?  Queue는 FIFO, 즉 선입 선출형 자료형이다. the queues of bus stop 즉, 버스정류장에서 따온 queue는 먼저 온 사람(제일 오래 기다린 사람)이 제일 먼저 탄다는 원리를 그대로 따왔다.  데이터를 제일 뒤에 집어넣는 enqueue, 데이터를 제일 앞에서 추출하는 dequeue 등의 작업이 가능하다.삽입을 하는 enq">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/02/Queue.png">
 <meta property="article:published_time" content="2020-12-27T13:52:36.000Z">
-<meta property="article:modified_time" content="2020-12-31T07:31:19.833Z">
+<meta property="article:modified_time" content="2020-12-31T08:29:45.813Z">
 <meta property="article:author" content="hackertaco">
 <meta property="article:tag" content="스터디 자료구조">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-3-Queue/" class="article-date">
-     <time datetime="2020-12-31T07:31:19.833Z" itemprop="dateModified">2020-12-31</time>
+     <time datetime="2020-12-31T08:29:45.813Z" itemprop="dateModified">2020-12-31</time>
   </a>
 </div>
 
@@ -212,9 +212,35 @@
             <h1 id="queue"><a href="#queue" class="headerlink" title="queue?"></a>queue?</h1><hr>
 <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/02/Queue.png"/>
 Queue는 FIFO, 즉 선입 선출형 자료형이다.
+the queues of bus stop 즉, 버스정류장에서 따온 queue는 먼저 온 사람(제일 오래 기다린 사람)이 제일 먼저 탄다는 원리를 그대로 따왔다.
 
-<p>데이터를 집어넣는 enqueue, 데이터를 추출하는 dequeue 등의 작업이 가능하다.</p>
+<p>데이터를 제일 뒤에 집어넣는 enqueue, 데이터를 제일 앞에서 추출하는 dequeue 등의 작업이 가능하다.<br>삽입을 하는 enqueue의 경우 O(1), 삭제를 하는 dequeue의 경우 O(1)의 복잡도를 가진다.<br>접근을 하는 경우 O(n)의 복잡도를 가진다.</p>
 <hr>
+<h3 id="use-case"><a href="#use-case" class="headerlink" title="use case?"></a>use case?</h3><hr>
+<p>즉각적으로 삽입, 삭제가 가능해 많이 사용된다.</p>
+<ul>
+<li>Game servers that pair you up with other users (any networking to handle congestion)</li>
+<li>Any waiting line</li>
+<li>Background tasks</li>
+<li>Printer processes</li>
+<li>Traversing a Binary Search Tree or a Graph</li>
+<li>Programming interviews</li>
+</ul>
+<hr>
+<h3 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h3><h4 id="javascript로는-배열을-이용해-아-주-간단히-pop-과-unshift-로-queue의-핵심-기능을-구현할-수-있다"><a href="#javascript로는-배열을-이용해-아-주-간단히-pop-과-unshift-로-queue의-핵심-기능을-구현할-수-있다" class="headerlink" title="javascript로는 배열을 이용해 아- 주 간단히, pop()과 unshift()로 queue의 핵심 기능을 구현할 수 있다."></a>javascript로는 배열을 이용해 아- 주 간단히, pop()과 unshift()로 queue의 핵심 기능을 구현할 수 있다.</h4><h4 id="그러나-링크드-리스트를-이용해-봄"><a href="#그러나-링크드-리스트를-이용해-봄" class="headerlink" title="그러나 링크드 리스트를 이용해 봄."></a>그러나 링크드 리스트를 이용해 봄.</h4><ol>
+<li>declare</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = data;</span><br><span class="line">    <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">//data가 따로 없으므로 parameter x</span></span><br><span class="line">    <span class="built_in">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.length = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>enqueue using linked list</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">enqueue</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> node = <span class="keyword">new</span> Node(data);</span><br><span class="line">    <span class="comment">//1. 리스트에 아무것도 없을 경우</span></span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">!<span class="built_in">this</span>.head</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.head = node;</span><br><span class="line">        <span class="built_in">this</span>.tail = node;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//2. 뭔가가 있을 경우</span></span><br><span class="line">        <span class="built_in">this</span>.tail.next = node;</span><br><span class="line">        <span class="built_in">this</span>.tail = node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.length ++;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.length;</span><br><span class="line">    <span class="comment">// length 반환</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>dequeue using linked list</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">dequeue</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="literal">null</span>;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">!<span class="built_in">this</span>.head</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.length === <span class="number">1</span></span>)</span>&#123;</span><br><span class="line">        data = <span class="built_in">this</span>.head.data;</span><br><span class="line">        <span class="built_in">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>.length--;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        data = <span class="built_in">this</span>.head.data;</span><br><span class="line">        <span class="built_in">this</span>.head = <span class="built_in">this</span>.head.next;</span><br><span class="line">        <span class="built_in">this</span>.length--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -303,11 +329,10 @@ Queue는 FIFO, 즉 선입 선출형 자료형이다.
         "description": "queue?
 
 Queue는 FIFO, 즉 선입 선출형 자료형이다.
+the queues of bus stop 즉, 버스정류장에서 따온 queue는 먼저 온 사람(제일 오래 기다린 사람)이 제일 먼저 탄다는 원리를 그대로 따왔다.
 
-데이터를 집어넣는 enqueue, 데이터를 추출하는 dequeue 등의 작업이 가능하다.
-
-",
-        "wordCount": 19
+데이터를 제일 뒤에 집어넣는 enqueue, 데이터를 제일 앞에서 추출하는 dequeue 등의 작업이 가능하다.삽입을 하는 enq",
+        "wordCount": 568
     }
 </script>
 
