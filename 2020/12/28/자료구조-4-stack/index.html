@@ -12,16 +12,16 @@
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="stack?   자료의 입출력이 한 방향에서만 이루어진다.queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.데이터를 삭제하는 순서가 다르다!LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!  queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 enqueue, 위에서 뽑는 dequeue 등의 작업이 가능하다.삽입을 하는 enqueue의 경우">
+    <meta name="description" content="stack?   자료의 입출력이 한 방향에서만 이루어진다.queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.데이터를 삭제하는 순서가 다르다!LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!  queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 삽입, 뒤에서 빼는 삭제 등의 작업이 가능하다.삽입을 하는 enqueue의 경우 O(1), 삭제를">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자료구조 4 stack">
 <meta property="og:url" content="https://hackertaco.github.io/2020/12/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-4-stack/index.html">
 <meta property="og:site_name" content="0년차 개발자의 블로그">
-<meta property="og:description" content="stack?   자료의 입출력이 한 방향에서만 이루어진다.queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.데이터를 삭제하는 순서가 다르다!LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!  queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 enqueue, 위에서 뽑는 dequeue 등의 작업이 가능하다.삽입을 하는 enqueue의 경우">
+<meta property="og:description" content="stack?   자료의 입출력이 한 방향에서만 이루어진다.queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.데이터를 삭제하는 순서가 다르다!LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!  queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 삽입, 뒤에서 빼는 삭제 등의 작업이 가능하다.삽입을 하는 enqueue의 경우 O(1), 삭제를">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://miro.medium.com/max/900/1*Bh6Vm9QFj7PfCRw1_0r8Tw.png">
 <meta property="article:published_time" content="2020-12-28T05:19:04.000Z">
-<meta property="article:modified_time" content="2020-12-31T09:12:47.527Z">
+<meta property="article:modified_time" content="2020-12-31T09:35:14.687Z">
 <meta property="article:author" content="hackertaco">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://miro.medium.com/max/900/1*Bh6Vm9QFj7PfCRw1_0r8Tw.png">
@@ -181,7 +181,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/28/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-4-stack/" class="article-date">
-     <time datetime="2020-12-31T09:12:47.527Z" itemprop="dateModified">2020-12-31</time>
+     <time datetime="2020-12-31T09:35:14.687Z" itemprop="dateModified">2020-12-31</time>
   </a>
 </div>
 
@@ -208,7 +208,7 @@
 
 <p>자료의 입출력이 한 방향에서만 이루어진다.<br>queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.<br>데이터를 삭제하는 순서가 다르다!<br>LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!</p>
 <ul>
-<li>queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 enqueue, 위에서 뽑는 dequeue 등의 작업이 가능하다.<br>삽입을 하는 enqueue의 경우 O(1), 삭제를 하는 dequeue의 경우 O(1)의 복잡도를 가진다.<br>접근을 하는 경우 O(n)의 복잡도를 가진다.</li>
+<li>queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 삽입, 뒤에서 빼는 삭제 등의 작업이 가능하다.<br>삽입을 하는 enqueue의 경우 O(1), 삭제를 하는 dequeue의 경우 O(1)의 복잡도를 가진다.<br>접근을 하는 경우 O(n)의 복잡도를 가진다.</li>
 </ul>
 <hr>
 <h3 id="use-case"><a href="#use-case" class="headerlink" title="use case?"></a>use case?</h3><hr>
@@ -220,7 +220,21 @@
 <li>Any data that needs to be handled with Last In First Out logic</li>
 </ul>
 <hr>
-<h3 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h3><h4 id="javascript로는-배열을-이용해-아-주-간단히-shift-과-unshift-혹은-push-pop-으로-queue의-핵심-기능을-구현할-수-있다"><a href="#javascript로는-배열을-이용해-아-주-간단히-shift-과-unshift-혹은-push-pop-으로-queue의-핵심-기능을-구현할-수-있다" class="headerlink" title="javascript로는 배열을 이용해 아- 주 간단히, shift()과 unshift(), 혹은 push() pop()으로 queue의 핵심 기능을 구현할 수 있다."></a>javascript로는 배열을 이용해 아- 주 간단히, shift()과 unshift(), 혹은 push() pop()으로 queue의 핵심 기능을 구현할 수 있다.</h4><h4 id="그러나-링크드-리스트를-이용해-봄"><a href="#그러나-링크드-리스트를-이용해-봄" class="headerlink" title="그러나 링크드 리스트를 이용해 봄."></a>그러나 링크드 리스트를 이용해 봄.</h4>
+<h3 id="구현"><a href="#구현" class="headerlink" title="구현"></a>구현</h3><h4 id="javascript로는-배열을-이용해-아-주-간단히-shift-과-unshift-혹은-push-pop-으로-queue의-핵심-기능을-구현할-수-있다"><a href="#javascript로는-배열을-이용해-아-주-간단히-shift-과-unshift-혹은-push-pop-으로-queue의-핵심-기능을-구현할-수-있다" class="headerlink" title="javascript로는 배열을 이용해 아- 주 간단히, shift()과 unshift(), 혹은 push() pop()으로 queue의 핵심 기능을 구현할 수 있다."></a>javascript로는 배열을 이용해 아- 주 간단히, shift()과 unshift(), 혹은 push() pop()으로 queue의 핵심 기능을 구현할 수 있다.</h4><h4 id="그러나-링크드-리스트를-이용해-봄"><a href="#그러나-링크드-리스트를-이용해-봄" class="headerlink" title="그러나 링크드 리스트를 이용해 봄."></a>그러나 링크드 리스트를 이용해 봄.</h4><h4 id="shift-와-unshift-개념으로-기능을-구현할-것-그-이유는-linked-list에는-next만-있고-previous는-없기-때문에-pop-을-구현할-경우-O-n-이-나온다"><a href="#shift-와-unshift-개념으로-기능을-구현할-것-그-이유는-linked-list에는-next만-있고-previous는-없기-때문에-pop-을-구현할-경우-O-n-이-나온다" class="headerlink" title="shift()와 unshift()개념으로 기능을 구현할 것. 그 이유는 linked list에는 next만 있고 previous는 없기 때문에, pop()을 구현할 경우 O(n)이 나온다."></a>shift()와 unshift()개념으로 기능을 구현할 것. 그 이유는 linked list에는 next만 있고 previous는 없기 때문에, pop()을 구현할 경우 O(n)이 나온다.</h4><ol>
+<li>declare</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">data</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.data = data;</span><br><span class="line">    <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">//data가 따로 없으므로 parameter x</span></span><br><span class="line">    <span class="built_in">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.length = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>unshift using linked list</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">unshift</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> node = <span class="keyword">new</span> Node(data);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">!<span class="built_in">this</span>.head</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.head = node;</span><br><span class="line">        <span class="built_in">this</span>.tail = node;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        node.next = <span class="built_in">this</span>.head</span><br><span class="line">        <span class="built_in">this</span>.head = node</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.length ++;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>shift using linked list</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">shift</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params">!<span class="built_in">this</span>.head</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.length === <span class="number">1</span></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">this</span>.length--;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">this</span>.head = <span class="built_in">this</span>.head.next;</span><br><span class="line">        <span class="built_in">this</span>.length --;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
@@ -310,8 +324,8 @@
 
 자료의 입출력이 한 방향에서만 이루어진다.queue와 같이 선형적 구조를 가지지만, 다른 부분이 있다.데이터를 삭제하는 순서가 다르다!LIFO 제일 마지막에 들어간 요소를 제일 먼저 빼는!
 
-queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 enqueue, 위에서 뽑는 dequeue 등의 작업이 가능하다.삽입을 하는 enqueue의 경우 ",
-        "wordCount": 140
+queue와 비슷하게, 데이터를 제일 뒤에 집어넣는 삽입, 뒤에서 빼는 삭제 등의 작업이 가능하다.삽입을 하는 enqueue의 경우 O(1), 삭제를 ",
+        "wordCount": 546
     }
 </script>
 
