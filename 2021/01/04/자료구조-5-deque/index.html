@@ -20,7 +20,7 @@
 <meta property="og:description" content="deque? 큐와 스택을 공부하면서, 큐는 fifo, 스택은 lifo로 데이터들이 움직이는 것을 보았다.그런데, deque는 앞에도 뒤에서도 데이터가 들어오고 빠져나갈 수 있다고 한다.  possible operations?  add front add back remove front remove back select front select back size">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-04T14:27:55.000Z">
-<meta property="article:modified_time" content="2021-01-06T14:44:50.400Z">
+<meta property="article:modified_time" content="2021-01-06T15:24:13.006Z">
 <meta property="article:author" content="hackertaco">
 <meta property="article:tag" content="스터디">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/01/04/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-5-deque/" class="article-date">
-     <time datetime="2021-01-06T14:44:50.400Z" itemprop="dateModified">2021-01-06</time>
+     <time datetime="2021-01-06T15:24:13.006Z" itemprop="dateModified">2021-01-07</time>
   </a>
 </div>
 
@@ -230,7 +230,30 @@
 </ul>
 <hr>
 <p>s</p>
-<h1 id="realize-deque"><a href="#realize-deque" class="headerlink" title="realize deque"></a>realize deque</h1><p>1.</p>
+<h1 id="realize-deque"><a href="#realize-deque" class="headerlink" title="realize deque"></a>realize deque</h1><ol>
+<li>클래스 만들기</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">deque</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.items = &#123;&#125;;</span><br><span class="line">    <span class="built_in">this</span>.size = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">this</span>.smallSize = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>add front</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">addBack</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.items[<span class="built_in">this</span>.size] = data</span><br><span class="line">    <span class="built_in">this</span>.size ++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>add back</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">addFront</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.size === <span class="number">0</span></span>)</span>&#123;</span><br><span class="line">        addBack(data)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">this</span>.smallSize &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">this</span>.smallSize--;</span><br><span class="line">        <span class="built_in">this</span>.items[<span class="built_in">this</span>.smallSize] = data;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">for</span>(<span class="params"><span class="keyword">let</span> i = <span class="built_in">this</span>.size; i &gt; <span class="number">0</span>; i--</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.items[<span class="built_in">this</span>.size] = <span class="built_in">this</span>.items[<span class="built_in">this</span>.size - <span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.size++</span><br><span class="line">        <span class="built_in">this</span>.items[<span class="number">0</span>] = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>remove front</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">removeFront</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.size === <span class="number">0</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> result = <span class="built_in">this</span>.items[<span class="built_in">this</span>.smallSize];</span><br><span class="line">    <span class="keyword">delete</span> <span class="built_in">this</span>.items[<span class="built_in">this</span>.smallSize];</span><br><span class="line">    <span class="built_in">this</span>.smallSize++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>remove back</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">removeBack</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.size === <span class="number">0</span></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> result = <span class="built_in">this</span>.items[<span class="built_in">this</span>.size - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">delete</span> <span class="built_in">this</span>.items[<span class="built_in">this</span>.size - <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">this</span>.size--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -314,7 +337,7 @@
         "genre": "",
         "datePublished": "2021-01-04",
         "dateCreated": "2021-01-04",
-        "dateModified": "2021-01-06",
+        "dateModified": "2021-01-07",
         "url": "https://hackertaco.github.io/2021/01/04/자료구조-5-deque/",
         "description": "deque?
 큐와 스택을 공부하면서, 큐는 fifo, 스택은 lifo로 데이터들이 움직이는 것을 보았다.그런데, deque는 앞에도 뒤에서도 데이터가 들어오고 빠져나갈 수 있다고 한다.
@@ -328,7 +351,7 @@ remove back
 select front
 select back
 size",
-        "wordCount": 65
+        "wordCount": 483
     }
 </script>
 
