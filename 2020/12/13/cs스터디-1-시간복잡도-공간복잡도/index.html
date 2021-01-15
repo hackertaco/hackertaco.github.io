@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="스터디" />
     
-    <meta name="description" content="1. cs 스터디 모집 개발 네트웤 모임에서, cs 스터디에 대한 열망이 뿜뿜해져서,,, 스터디를 구하게 되었따.  2. 학습 계획 아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.  3. 시간 복잡도? 공간 복잡도 ?4. 알고리즘배열 189. Rotate Array12345678910111213141516&#x2F;** * @param">
+    <meta name="description" content="1. cs 스터디 모집 개발 네트웤 모임에서, cs 스터디에 대한 열망이 뿜뿜해져서,,, 스터디를 구하게 되었따.  2. 학습 계획 아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.  3. 시간 복잡도? 공간 복잡도 ? 알아서 공부하기로. 아직 완전히 이해는 어렵지만, 시간 복잡도는 프로세스 관련한, 공간 복잡도는 메모리와 관련한 부분이">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cs스터디">
 <meta property="og:url" content="https://hackertaco.github.io/2020/12/13/cs%EC%8A%A4%ED%84%B0%EB%94%94-1-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84/index.html">
 <meta property="og:site_name" content="0년차 개발자의 블로그">
-<meta property="og:description" content="1. cs 스터디 모집 개발 네트웤 모임에서, cs 스터디에 대한 열망이 뿜뿜해져서,,, 스터디를 구하게 되었따.  2. 학습 계획 아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.  3. 시간 복잡도? 공간 복잡도 ?4. 알고리즘배열 189. Rotate Array12345678910111213141516&#x2F;** * @param">
+<meta property="og:description" content="1. cs 스터디 모집 개발 네트웤 모임에서, cs 스터디에 대한 열망이 뿜뿜해져서,,, 스터디를 구하게 되었따.  2. 학습 계획 아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.  3. 시간 복잡도? 공간 복잡도 ? 알아서 공부하기로. 아직 완전히 이해는 어렵지만, 시간 복잡도는 프로세스 관련한, 공간 복잡도는 메모리와 관련한 부분이">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-13T14:39:39.000Z">
-<meta property="article:modified_time" content="2020-12-17T10:06:20.815Z">
+<meta property="article:modified_time" content="2021-01-15T14:13:05.992Z">
 <meta property="article:author" content="hackertaco">
 <meta property="article:tag" content="스터디">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2020/12/13/cs%EC%8A%A4%ED%84%B0%EB%94%94-1-%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%B5%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84/" class="article-date">
-     <time datetime="2020-12-17T10:06:20.815Z" itemprop="dateModified">2020-12-17</time>
+     <time datetime="2021-01-15T14:13:05.992Z" itemprop="dateModified">2021-01-15</time>
   </a>
 </div>
 
@@ -213,7 +213,10 @@
 <h2 id="2-학습-계획"><a href="#2-학습-계획" class="headerlink" title="2. 학습 계획"></a>2. 학습 계획</h2><ul>
 <li>아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.</li>
 </ul>
-<h2 id="3-시간-복잡도-공간-복잡도"><a href="#3-시간-복잡도-공간-복잡도" class="headerlink" title="3. 시간 복잡도? 공간 복잡도 ?"></a>3. 시간 복잡도? 공간 복잡도 ?</h2><h2 id="4-알고리즘"><a href="#4-알고리즘" class="headerlink" title="4. 알고리즘"></a>4. 알고리즘</h2><h6 id="배열-189-Rotate-Array"><a href="#배열-189-Rotate-Array" class="headerlink" title="배열 189. Rotate Array"></a>배열 189. Rotate Array</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;number[]&#125; nums</span><br><span class="line"> * @param &#123;number&#125; k</span><br><span class="line"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</span><br><span class="line"> *&#x2F;</span><br><span class="line">var rotate &#x3D; function(nums, k) &#123;</span><br><span class="line">  const newNums &#x3D; nums.splice(nums.length-k, k);</span><br><span class="line">    nums.unshift(...newNums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;     for(let i &#x3D; 0; i&lt;k; i++)&#123;</span><br><span class="line">&#x2F;&#x2F;        nums.unshift(nums.pop())</span><br><span class="line">&#x2F;&#x2F;     &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-시간-복잡도-공간-복잡도"><a href="#3-시간-복잡도-공간-복잡도" class="headerlink" title="3. 시간 복잡도? 공간 복잡도 ?"></a>3. 시간 복잡도? 공간 복잡도 ?</h2><ul>
+<li>알아서 공부하기로. 아직 완전히 이해는 어렵지만, 시간 복잡도는 프로세스 관련한, 공간 복잡도는 메모리와 관련한 부분이라는 것을 알게 되었다.</li>
+</ul>
+<h2 id="4-알고리즘"><a href="#4-알고리즘" class="headerlink" title="4. 알고리즘"></a>4. 알고리즘</h2><h6 id="배열-189-Rotate-Array"><a href="#배열-189-Rotate-Array" class="headerlink" title="배열 189. Rotate Array"></a>배열 189. Rotate Array</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;number[]&#125; nums</span><br><span class="line"> * @param &#123;number&#125; k</span><br><span class="line"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</span><br><span class="line"> *&#x2F;</span><br><span class="line">var rotate &#x3D; function(nums, k) &#123;</span><br><span class="line">  const newNums &#x3D; nums.splice(nums.length-k, k);</span><br><span class="line">    nums.unshift(...newNums)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;     for(let i &#x3D; 0; i&lt;k; i++)&#123;</span><br><span class="line">&#x2F;&#x2F;        nums.unshift(nums.pop())</span><br><span class="line">&#x2F;&#x2F;     &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h6 id="배열-56-Merge-Intervals"><a href="#배열-56-Merge-Intervals" class="headerlink" title="배열 56. Merge Intervals"></a>배열 56. Merge Intervals</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;number[][]&#125; intervals</span><br><span class="line"> * @return &#123;number[][]&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var merge &#x3D; function(intervals) &#123;</span><br><span class="line">   const merging &#x3D; (acc, cur) &#x3D;&gt;</span><br><span class="line">   (!acc.length || acc[acc.length - 1][1] &lt; cur[0] ? acc.push(cur) :</span><br><span class="line">                                  acc[acc.length - 1][1] &#x3D; Math.max(acc[acc.length-1][1], cur[1]),acc)</span><br><span class="line"></span><br><span class="line">   return intervals.sort((a,b) &#x3D;&gt; a[0] - b[0]).reduce(merging,[]);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -303,7 +306,7 @@
         "genre": "",
         "datePublished": "2020-12-13",
         "dateCreated": "2020-12-13",
-        "dateModified": "2020-12-17",
+        "dateModified": "2021-01-15",
         "url": "https://hackertaco.github.io/2020/12/13/cs스터디-1-시간복잡도-공간복잡도/",
         "description": "1. cs 스터디 모집
 개발 네트웤 모임에서, cs 스터디에 대한 열망이 뿜뿜해져서,,, 스터디를 구하게 되었따.
@@ -311,8 +314,9 @@
 2. 학습 계획
 아직 거창하지는 않으나, 알고리즘과 자료구조 이론을 공부할 생각이다.
 
-3. 시간 복잡도? 공간 복잡도 ?4. 알고리즘배열 189. Rotate Array12345678910111213141516&#x2F;** * @param",
-        "wordCount": 811
+3. 시간 복잡도? 공간 복잡도 ?
+알아서 공부하기로. 아직 완전히 이해는 어렵지만, 시간 복잡도는 프로세스 관련한, 공간 복잡도는 메모리와 관련한 부분이",
+        "wordCount": 828
     }
 </script>
 
