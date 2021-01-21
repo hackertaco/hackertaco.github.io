@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="일전에 binary tree 구조를 다룬 적이 있다.이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다. 이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.s 이진 탐색의">
+    <meta name="description" content="일전에 binary tree 구조를 다룬 적이 있다.이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다. 이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.힙이랑 비슷한듯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="자료구조 9 binary search tree">
 <meta property="og:url" content="https://hackertaco.github.io/2021/01/18/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-9-binary-search-tree/index.html">
 <meta property="og:site_name" content="0년차 개발자의 블로그">
-<meta property="og:description" content="일전에 binary tree 구조를 다룬 적이 있다.이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다. 이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.s 이진 탐색의">
+<meta property="og:description" content="일전에 binary tree 구조를 다룬 적이 있다.이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다. 이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.힙이랑 비슷한듯">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-17T16:24:04.000Z">
-<meta property="article:modified_time" content="2021-01-21T14:30:29.986Z">
+<meta property="article:modified_time" content="2021-01-21T15:01:52.627Z">
 <meta property="article:author" content="hackertaco">
 <meta name="twitter:card" content="summary">
     
@@ -179,7 +179,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/01/18/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-9-binary-search-tree/" class="article-date">
-     <time datetime="2021-01-21T14:30:29.986Z" itemprop="dateModified">2021-01-21</time>
+     <time datetime="2021-01-21T15:01:52.627Z" itemprop="dateModified">2021-01-22</time>
   </a>
 </div>
 
@@ -202,8 +202,10 @@
             
 
             <p>일전에 binary tree 구조를 다룬 적이 있다.<br>이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다.</p>
-<p>이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.<br>s</p>
-<h2 id="이진-탐색의-장점"><a href="#이진-탐색의-장점" class="headerlink" title="이진 탐색의 장점"></a>이진 탐색의 장점</h2>
+<p>이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.<br>힙이랑 비슷한듯 한데, 힙은 자식노드보다 부모 노드가 무조건 크거나(최대힙) 무조건 작은(최소힙) 특징을 가지고 있으나, bst의 경우는 왼쪽 자식이 제일 작고, 부모가 그 다음으로 크고, 오른쪽 자식이 제일 큰.. 다소 신기한 구조를 가지고 있다.</p>
+<p>따라서, 힙은 우선순위 정렬에, bst는 탐색에 강점이 있다고들 합니다.</p>
+<h2 id="이진-탐색의-구현"><a href="#이진-탐색의-구현" class="headerlink" title="이진 탐색의 구현"></a>이진 탐색의 구현</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. node 선언</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.value = value;</span><br><span class="line">    <span class="built_in">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.root = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//2. insert</span></span><br><span class="line">  <span class="function"><span class="title">insert</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(value);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.root === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.root = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> current = <span class="built_in">this</span>.root;</span><br><span class="line">    <span class="keyword">while</span> (current) &#123;</span><br><span class="line">      <span class="keyword">if</span> (value === current.value) <span class="keyword">return</span> <span class="literal">undefined</span>;</span><br><span class="line">      <span class="keyword">if</span> (value &lt; current.value) &#123;</span><br><span class="line">        <span class="keyword">if</span> (current.left === <span class="literal">null</span>) &#123;</span><br><span class="line">          current.left = newNode;</span><br><span class="line">        &#125;</span><br><span class="line">        current = current.left;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (current.right === <span class="literal">null</span>) &#123;</span><br><span class="line">          current.right = newNode;</span><br><span class="line">        &#125;</span><br><span class="line">        current = current.right;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">find</span>(<span class="params">value</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> current = <span class="built_in">this</span>.root;</span><br><span class="line">    <span class="keyword">let</span> found = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span> (current &amp;&amp; !found) &#123;</span><br><span class="line">      <span class="keyword">if</span> (value &lt; current.value) &#123;</span><br><span class="line">        current = current.left;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &gt; current.value) &#123;</span><br><span class="line">        current = current.right;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        found = current;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> found;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
@@ -286,12 +288,11 @@
         "genre": "",
         "datePublished": "2021-01-18",
         "dateCreated": "2021-01-18",
-        "dateModified": "2021-01-21",
+        "dateModified": "2021-01-22",
         "url": "https://hackertaco.github.io/2021/01/18/자료구조-9-binary-search-tree/",
         "description": "일전에 binary tree 구조를 다룬 적이 있다.이름도 비슷한 binary search tree는, 각 노드가 root에서부터 leaf까지 정렬이 되어있는 구조다.
-이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.s
-이진 탐색의",
-        "wordCount": 47
+이 bst는, (줄여 말하겠음) 이진 탐색과 연결 리스트를 결합한 구조로, 이진탐색의 효율적인 탐색 능력을 유지하고, 연결리스트의 장점인 삽입과 삭제가 빠르게 진행되도록 한다.힙이랑 비슷한듯",
+        "wordCount": 576
     }
 </script>
 
