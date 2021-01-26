@@ -20,7 +20,7 @@
 <meta property="og:description" content="여러명이서 함께하던 내 프로젝트 서버가 죽었다.이제 모두들 이 프로젝트에 대한 애정도 딱히 없고, 굳이 이 서비스를 유지할 이유도 없어 죽도록 놔둔 것이지만, 난 내 개인적으로 첫번째 프로젝트였던지라 감회가 달랐다. 그리고 기획부터 개발까지 으쌰으쌰 달려왔기에, 더욱 더 의미가 깊었다. 따라서, 혼자, 서버를, 살려보기로 했다!  해야할 일   프론트 서버">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-23T14:18:35.000Z">
-<meta property="article:modified_time" content="2021-01-24T14:43:09.880Z">
+<meta property="article:modified_time" content="2021-01-26T14:52:34.868Z">
 <meta property="article:author" content="hackertaco">
 <meta name="twitter:card" content="summary">
     
@@ -179,7 +179,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/01/23/ec2-%EC%8A%88%ED%8D%BC%EC%8B%AC%ED%94%8C-%EB%8F%84%EC%BB%A4-%EB%B0%B0%ED%8F%AC%EB%B2%95/" class="article-date">
-     <time datetime="2021-01-24T14:43:09.880Z" itemprop="dateModified">2021-01-24</time>
+     <time datetime="2021-01-26T14:52:34.868Z" itemprop="dateModified">2021-01-26</time>
   </a>
 </div>
 
@@ -217,6 +217,16 @@
 </ol>
 <p>도메인이름도 바꿨다.</p>
 <p>11$가 나오면 대충 14$가 나온다.</p>
+<ol start="3">
+<li><p>ec2를 등록한다.<br>구글에 아주 좋은 자료를 찾아서, 하라는 대로 했을 뿐인데,, 어떻게 되었다.<br>docker aws ec2설치 라는 키워드만 치면 만사 해결되는 매직 !<br>ec2에서 인스턴스 등록하구, 키페어 등록해 다운받고 (잊으면 안됨)<br>이 키페어를 통해서 ssh install 진행 ( 키페어와, 인스턴스 주소 연결할 것 )</p>
+</li>
+<li><p>도커 빌드 도커 런</p>
+</li>
+</ol>
+<ul>
+<li>docker build -t (tag) 이름 .</li>
+<li>docker run -d(deploy) -p(port) 80(external):3000(internal) 이름</li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -300,7 +310,7 @@
         "genre": "",
         "datePublished": "2021-01-23",
         "dateCreated": "2021-01-23",
-        "dateModified": "2021-01-24",
+        "dateModified": "2021-01-26",
         "url": "https://hackertaco.github.io/2021/01/23/ec2-슈퍼심플-도커-배포법/",
         "description": "여러명이서 함께하던 내 프로젝트 서버가 죽었다.이제 모두들 이 프로젝트에 대한 애정도 딱히 없고, 굳이 이 서비스를 유지할 이유도 없어 죽도록 놔둔 것이지만, 난 내 개인적으로 첫번째 프로젝트였던지라 감회가 달랐다. 그리고 기획부터 개발까지 으쌰으쌰 달려왔기에, 더욱 더 의미가 깊었다.
 따라서, 혼자, 서버를, 살려보기로 했다!
@@ -309,7 +319,7 @@
 
 
 프론트 서버",
-        "wordCount": 68
+        "wordCount": 121
     }
 </script>
 
